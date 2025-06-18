@@ -44,7 +44,19 @@ class CoursePage {
     }
   
     waitForCourseLoad() {
-      cy.location('pathname').should('include', '/lectures');
+        cy.location('pathname').should('include', '/lectures');
+    }
+
+    clickPayInUSD() {
+        cy.get('input#product_id_4632690')
+          .should('exist')
+          .check({ force: true });
+    }
+
+    verifyUSDValue() {
+        cy.get('.col-sm-4.product-price .default-product-price.product_4632690')
+          .should('be.visible')
+          .and('contain.text', '$29');
     }
   
     clickEnroll() {

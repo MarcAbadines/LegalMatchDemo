@@ -2,6 +2,8 @@ import DemoPage from '../pages/DemoPage';
 import CoursePage from '../pages/CoursePage';
 import RegistrationPage from '../pages/RegistrationPage';
 
+const URL = '';
+
 describe('Way2Automation Test Demo', () => {
 
   it('1: Navigate to demo page', () => {
@@ -15,11 +17,7 @@ describe('Way2Automation Test Demo', () => {
     DemoPage.getActionNamesLogs(result);    
   });
 
-  it('3: Visit submit button href (Not supported in Cypress v9)', () => {
-    cy.log('Cross-origin visit not supported. Use Cypress v10+ or test manually.');
-  });
-
-  it('4: Extracts href for Submit Button', () => {
+  it('3-4: Extracts href for Submit Button (Not supported in Cypress v9', () => {
     DemoPage.visit();
     DemoPage.clickDynamicElementsCategory();
     DemoPage.getSubmitButtonHref();
@@ -37,7 +35,6 @@ describe('Way2Automation Test Demo', () => {
     RegistrationPage.enterUsernameValue();
     RegistrationPage.enterPasswordValue();
   });
-
 
   it('6: Click "Explore Membership"', () => {
     RegistrationPage.visit()
@@ -60,7 +57,7 @@ describe('Way2Automation Test Demo', () => {
       CoursePage.tapNextCourseButton();
       cy.wait(1000);
     }
-    cy.wait(1000);
+    cy.wait(3000);
     CoursePage.navigateToCourse(courseName);
 
     // CoursePage.verifyCourseURL();
@@ -83,7 +80,7 @@ describe('Way2Automation Test Demo', () => {
     CoursePage.visit();
   });
 
-  it('15-18: Complete checkout validations and screenshot', () => {
+  it('15-18: Complete checkout validations', () => {
     CoursePage.visit();
 
     CoursePage.clickPayInUSD();
