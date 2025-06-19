@@ -10,14 +10,14 @@ Project Structure
 
 How to Run
 
-1. Clone the repo  
+1. Clone the repo - 
 git clone https://github.com/MarcAbadines/LegalMatchDemo.git
 
-2. Install dependencies
+2. Install dependencies - 
 npm install
 
-3. Open Cypress Test Runner
+3. Open Cypress Test Runner - 
 npx cypress open
 
-4. Run tests headlessly
+4. Run tests headlessly -
 npx cypress run
